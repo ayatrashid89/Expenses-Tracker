@@ -9,7 +9,7 @@ var sum = totalnum.reduce(function(a, b){
 
 return (
     <View style={styles.total}>
-        <Text>Total Expenses=  {sum}</Text>
+        <Text style={styles.baseText}>Total Expenses=  {sum}</Text>
     </View>
 )
 }
@@ -18,9 +18,11 @@ const styles = StyleSheet.create({
     total : {
         
         paddingTop:30,
-
-
-       
     },
-    
-})
+
+    baseText: {
+      fontWeight: 'bold',
+      color: 'black',
+      fontSize: 20
+    }
+  });

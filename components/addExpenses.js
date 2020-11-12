@@ -11,6 +11,13 @@ const changeItemHandler= (val) =>{
 const changePriceHandler= (val2) =>{
     setPrice(val2)
 }
+
+const resetForm = () => {
+    return (
+      onChangeText= {expenses}
+    )
+  }
+
     return (
         <View>
             <TextInput
@@ -22,12 +29,14 @@ const changePriceHandler= (val2) =>{
                 style={styles.input}
                 placeholder='Add Price'
                 onChangeText= {changePriceHandler}
+                keyboardType={'numeric'}
             />
             <Button
-            onPress= {() => submitHandler(item,price) }
+            onPress= {() => submitHandler(item,price)}
             title='Add To Your Expenses List '
-            color='coral'
-            />
+            color='#348017'
+           />
+              
         </View>
     )
 }
@@ -39,7 +48,7 @@ const styles= StyleSheet.create({
         height: 40,
         color:'black',
         borderWidth: 2,
-        borderColor: 'coral',
+        borderColor: '#348017',
         borderRadius: 6 ,
 }
 })
