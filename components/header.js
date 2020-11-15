@@ -1,12 +1,16 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Fontisto } from '@expo/vector-icons';
+import { SimpleLineIcons } from '@expo/vector-icons';
 
-export default function Header() {
+export default function Header(props) {
+  const openMenu=() => {
+  props.navigation.openDrawer()
+  }
   return (
     <View style={styles.header}>
-      <Fontisto name="calculator" size={30} color="#483C32"style={styles.icon}/>
-      <Text style={styles.title}>Expenses Tracker</Text>
+      <SimpleLineIcons name={props.logo}size={30} color="black"style={styles.icon} onPress={ openMenu}/>
+      <Text style={styles.title}>{props.name}</Text>
     </View>
   );
 }

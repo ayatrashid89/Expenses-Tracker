@@ -1,38 +1,38 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, TextInput, Button, View } from 'react-native';
+import { StyleSheet, Text, TextInput, Button, View, Keyboard, } from 'react-native';
 
 export default function AddExpenses ({submitHandler}) {
 
 const [item, setItem] = useState('');
 const [price, setPrice] = useState('');
-const changeItemHandler= (val) =>{
-    setItem(val)
-}
-const changePriceHandler= (val2) =>{
-    setPrice(val2)
-}
 
 const resetForm = () => {
-    return (
-      onChangeText= {expenses}
-    )
+    setPrice('');
+    setItem('');
   }
 
     return (
         <View>
             <TextInput
                 style={styles.input}
-                placeholder='Add Itim'
-                onChangeText= {changeItemHandler}
+                placeholder='Add Item'
+                value={item}
+                onChangeText= {(text) => setItem(text)}
             />
              <TextInput
                 style={styles.input}
                 placeholder='Add Price'
-                onChangeText= {changePriceHandler}
+                value={price}
+                onChangeText= {(text)=>setPrice(text)}
                 keyboardType={'numeric'}
             />
             <Button
-            onPress= {() => submitHandler(item,price)}
+            onPress= {() => {
+                submitHandler(item,price);
+                resetForm();
+                Keyboard.dismiss();
+            }
+            }
             title='Add To Your Expenses List '
             color='#348017'
            />

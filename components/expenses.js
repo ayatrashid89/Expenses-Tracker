@@ -9,7 +9,7 @@ export default function Expenses ({item, pressHandler }) {
         <TouchableOpacity  style={styles.items}>
             <View>
                 <Text> {item.text} </Text>
-                <Text> {item.num} $ </Text>
+                <Text> {item.price} $ </Text>
             </View>
            
             <MaterialIcons name='delete' size={20} onPress={() => pressHandler(item.key)} />
@@ -26,11 +26,11 @@ const styles = StyleSheet.create({
         justifyContent:'space-between',
         textAlign:'center',
         alignItems:'center',
-        padding: 16,
+        padding: 10,
         marginTop:16,
-        borderColor: '#728C00',
-        borderWidth: 1,
-        borderStyle: "solid"
+        borderBottomWidth:1,
+        borderBottomColor:'#728C00',
+        borderRadius:77,
     },
     
 })
