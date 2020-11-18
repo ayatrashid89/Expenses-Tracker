@@ -9,14 +9,15 @@ const Drawer = createDrawerNavigator({
     Home: {
         screen : Home,
     },
-    About: {
-        screen : About,
-    },
+    
     Scanner: {
         screen : Scanner,
         navigationOptions :{
             title: 'Scan my item'
-        }
+        },
+    },
+    About: {
+        screen : About,
     },
     
     
